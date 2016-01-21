@@ -11,6 +11,7 @@ env:
     # ** specific to your project **
     - secure: "t65xtdQ7WpWBujB04gE7Ezh9cZ/GtHFEnwJyHeZdFDLeM0YgcNg8+Iv0LQj40DCbfMLV7c0lDV9hKOqfn+OhtHzBHglaiyHwMRZREH0VoIEnK/0W1z4nDFe0z5uv0SCp1UkhsnotDTiR99OzENg525SfTEiO5n9tdlz0gDCA40M="
 
+  matrix:
     - ROOT_VERSION=root5
     - ROOT_VERSION=root6
 
@@ -26,6 +27,9 @@ matrix:
     exclude:
         - os: osx
           compiler: gcc
+        - os: osx
+          compiler: clang
+          env: COVERITY_SCAN_BRANCH=1
         - os: linux
           compiler: clang
 
