@@ -17,6 +17,7 @@
 
 #include <string>
 #include <memory> // unique_ptr
+#include <cstdint>
 
 #include <boost/thread/mutex.hpp>
 
@@ -55,10 +56,10 @@ class FairMQChannel
     std::string GetAddress() const;
     /// Get socket send buffer size (in number of messages)
     /// @return Returns socket send buffer size (in number of messages)
-    int GetSndBufSize() const;
+    uint64_t GetSndBufSize() const;
     /// Get socket receive buffer size (in number of messages)
     /// @return Returns socket receive buffer size (in number of messages)
-    int GetRcvBufSize() const;
+    uint64_t GetRcvBufSize() const;
     /// Get socket rate logging setting (1/0)
     /// @return Returns socket rate logging setting (1/0)
     int GetRateLogging() const;
@@ -74,10 +75,10 @@ class FairMQChannel
     void UpdateAddress(const std::string& address);
     /// Set socket send buffer size
     /// @param sndBufSize Socket send buffer size (in number of messages)
-    void UpdateSndBufSize(const int sndBufSize);
+    void UpdateSndBufSize(const uint64_t sndBufSize);
     /// Set socket receive buffer size
     /// @param rcvBufSize Socket receive buffer size (in number of messages)
-    void UpdateRcvBufSize(const int rcvBufSize);
+    void UpdateRcvBufSize(const uint64_t rcvBufSize);
     /// Set socket rate logging setting
     /// @param rateLogging Socket rate logging setting (1/0)
     void UpdateRateLogging(const int rateLogging);
@@ -183,8 +184,8 @@ class FairMQChannel
     std::string fType;
     std::string fMethod;
     std::string fAddress;
-    int fSndBufSize;
-    int fRcvBufSize;
+    uint64_t fSndBufSize;
+    uint64_t fRcvBufSize;
     int fRateLogging;
 
     std::string fChannelName;

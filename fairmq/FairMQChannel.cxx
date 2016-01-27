@@ -105,7 +105,7 @@ string FairMQChannel::GetAddress() const
     }
 }
 
-int FairMQChannel::GetSndBufSize() const
+uint64_t FairMQChannel::GetSndBufSize() const
 {
     try
     {
@@ -119,7 +119,7 @@ int FairMQChannel::GetSndBufSize() const
     }
 }
 
-int FairMQChannel::GetRcvBufSize() const
+uint64_t FairMQChannel::GetRcvBufSize() const
 {
     try
     {
@@ -192,7 +192,7 @@ void FairMQChannel::UpdateAddress(const string& address)
     }
 }
 
-void FairMQChannel::UpdateSndBufSize(const int sndBufSize)
+void FairMQChannel::UpdateSndBufSize(const uint64_t sndBufSize)
 {
     try
     {
@@ -207,7 +207,7 @@ void FairMQChannel::UpdateSndBufSize(const int sndBufSize)
     }
 }
 
-void FairMQChannel::UpdateRcvBufSize(const int rcvBufSize)
+void FairMQChannel::UpdateRcvBufSize(const uint64_t rcvBufSize)
 {
     try
     {
